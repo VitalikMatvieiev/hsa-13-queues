@@ -1,5 +1,3 @@
 # hsa-13-queues
-	AOF 	RDB	beanstalkd
-10000	1753 | 1679	1834 | 1764	1578 | 2636
-100000	16399 | 16641	15902 | 16093	13441 | 32078
-100000	162793 | 171913	172946 | 177773	N/A
+Results:
+<img width="499" alt="image" src="https://github.com/VitalikMatvieiev/hsa-13-queues/assets/77060767/a1146f42-6091-44c7-9663-877dc9febd6d">
