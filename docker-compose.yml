@@ -1,0 +1,39 @@
+services:
+  
+  redis-aof:
+    image: redis:latest
+    container_name: redis-aof
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_aof:/data
+  redis-rdb:
+    image: redis:latest
+    container_name: redis-rdb
+    command: ["redis-server", "--save", "1 1"]
+    ports:
+      - "6381:6379"
+    volumes:
+      - redis_rdb:/data
+
+  beanstalkd:
+    image: schickling/beanstalkd:latest
+    container_name: beanstalkd
+    ports:
+      - "11300:11300"
+    volumes:
+      - beanstalkd:/data
+  
+  # redis-no-persistence:
+  #   image: redis:latest
+  #   container_name: redis-no-persistence
+  #   command: ["redis-server", "--save"]
+  #   ports:
+  #     - "6379:6379"
+  
+
+volumes:
+  beanstalkd:
+  redis_aof:
+  redis_rdb:
